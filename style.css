@@ -1,7 +1,56 @@
 *{ margin: 0; padding: 0; }
-html{ 
+html{
+    box-sizing: border-box;
     height: 100%;
     padding: 24px;
 
-    background-color: 272434;
+    background-color: hsl(250, 18%, 17%);
+}
+
+body{
+    box-sizing: border-box;
+    height: 100%;
+    border-radius: 6px;
+    padding: 12px;
+
+
+    background-color: hsl(200, 50%, 90%);
+
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    grid-template-rows: 1fr;
+    gap: 18px;
+}
+
+#side-menu, #display{
+    box-shadow: 0 0 8px 6px hsla(230, 70%, 13%, 70%);
+    border: 2px solid hsl(215, 30%, 45%);
+
+    background-color: hsla(215, 30%, 13%, 95%);
+}
+
+#side-menu{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    #side-titles{
+        padding: 6px;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .side-tab{
+            box-sizing: border-box;
+            height: 2.5lh;
+            padding: 2px;
+
+            display: flex;
+            align-items: center;
+
+            &:hover{
+                background-color: brown;
+            }
+        }
+    }
 }
