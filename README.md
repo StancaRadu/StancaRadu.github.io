@@ -1,3 +1,1 @@
 # StancaRadu.github.io
-
-:)
