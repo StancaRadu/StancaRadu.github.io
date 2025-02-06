@@ -26,30 +26,85 @@ body{
     box-shadow: 0 0 8px 6px hsla(230, 70%, 13%, 70%);
     border: 2px solid hsl(215, 30%, 45%);
 
-    background-color: hsla(215, 30%, 13%, 95%);
+    background-color: hsl(217, 30%, 18%);
 }
 
 #side-menu{
+    color: hsl(198, 10%, 80%);
+
     display: grid;
     grid-template-rows: auto 1fr auto;
 
     #side-titles{
-        padding: 6px;
-        
+        padding: 6px 0;
+
+        background-color: inherit;
+
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: 4px;
+        overflow: hidden;
+
+        &::before{
+            content: '';
+
+            width: 400px;
+            height: 120px;
+
+            position: absolute;
+            top: var(--y);
+            left: var(--x);
+            transform: translate(-50%, -50%);
+
+            background-image: radial-gradient(hsl(225, 39%, 32%), transparent, transparent);
+            opacity: 0;
+        }
+        &:hover{
+            &::before{ opacity: 1; }
+        }
 
         .side-tab{
             box-sizing: border-box;
             height: 2.5lh;
-            padding: 2px;
+            border: 3px solid hsla(215, 30%, 45%, 0);
+            padding: 4px;
 
+            z-index: 1;
+
+            background-color: inherit;
+            cursor: pointer;
+
+            position: relative;
             display: flex;
             align-items: center;
 
+            transition: border .8s ease-out, transform .3s;
+
+            &::before{
+                content: '';
+                width: 90%;
+                height: 100%;
+
+                position: absolute;
+                right: 0;
+                transform: translateX(-100%);
+
+                background-image: linear-gradient(to left, hsla(215, 30%, 45%, 0.5), hsla(215, 30%, 45%, 0.1), transparent);
+                opacity: 0;
+                pointer-events: none;
+
+                transition: all .5s ease-in-out;
+            }
+
             &:hover{
-                background-color: brown;
+                border-left: 3px solid hsl(215, 30%, 45%);
+                transform: translateX(8px);
+
+                &::before{
+                    transform: none;
+                    opacity: 1;
+                }
             }
         }
     }
