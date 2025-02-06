@@ -43,6 +43,7 @@ body{
 
     #side-photo{
         box-sizing: border-box;
+        width: 100%;
         border: 2px dashed var(--border-light);
         padding: 4px;
         display: flex;
@@ -248,7 +249,7 @@ body{
             top: 0;
             left: -200%;
 
-            background-color: hsl(215, 30%, 45%);
+            background-color: var(--border-light);
 
             transition-timing-function: linear;
             transition-duration: .5s;
@@ -261,7 +262,7 @@ body{
                 position: absolute;
                 left: -100%;
 
-                background-image: linear-gradient(to left, hsl(215, 30%, 45%), transparent);
+                background-image: linear-gradient(to left, var(--border-light), transparent);
             }
             &::after{
                 content: '';
@@ -271,7 +272,7 @@ body{
                 position: absolute;
                 left: 100%;
 
-                background-image: linear-gradient(to right, hsl(215, 30%, 45%), transparent);
+                background-image: linear-gradient(to right, var(--border-light), transparent);
             }
         }
     }
