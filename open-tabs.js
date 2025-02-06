@@ -35,10 +35,24 @@ tabs.forEach(tab => {
 });
 
 document.getElementById('country1').onclick = function(e){
-    document.getElementById('slider').style.paddingLeft = '12.5%'
+    slider = document.getElementById('slider').style
+    slider.setProperty('--before-width', '5%');
+    document.getElementById('slider').style.paddingLeft = '17.5%'
+
+    setTimeout(()=>{
+        slider.setProperty('--before-width', '15%');
+    }, 200)
+    
+    
 }
 document.getElementById('country2').onclick = function(e){
+    slider = document.getElementById('slider').style
+    slider.setProperty('--before-width', '15%');
     document.getElementById('slider').style.paddingLeft = '62.5%'
+
+    setTimeout(()=>{
+        slider.setProperty('--before-width', '25%');
+    }, 200)
 }
 
 document.getElementById('close-button').onclick = function(e){

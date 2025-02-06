@@ -113,17 +113,20 @@ body{
             height: 2px;
             width: 100%;
             margin: 2px 0;
-            padding-left: 12.5%;
+            padding-left: 17.5%;
 
             transition: all .5s;
+
+            --before-width: 15%;
 
             &::before{
                 content: '';
                 display: flex;
-                width: 25%;
+                width: var(--before-width);
                 height: 100%;
                 background-color: var(--border-light);
                 border-radius: 6px;
+                transition: inherit;
 
             }
 
