@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Liter&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 
     <script src="menu-backlit.js" defer></script>
-    <script src="open-tabs.js" defer></script>
+    <script src="buttons.js" defer></script>
 
     <link rel="shortcut icon" type="image/x-icon" href="fav.ico" />
     <title>Portofolio</title>
@@ -23,8 +27,24 @@
             <div id="country1" class="country-details"><span>U.K.</span></div>
             <div id="country2" class="country-details"><span>Romania</span></div>
             <div id="slider"></div>
-            <div id="phone-details">0769265471</div>
-            <div id="address-details">Timisoara, Timis</div>
+            <div id="phone-details">
+                <div id="phone-label"><img src="icons/phone.png" alt="phone"></div>
+                <div id="phone-roll">
+                    <div id="uk-phone" class="phone-div">+447404764247
+                        <div id="ro-phone" class="phone-div">+40769265471</div>
+                    </div>
+                </div>
+            </div>
+            <div id="address-details">
+                <div id="address-label"><img src="icons/home.png" alt="home"></div>
+                <div id="address-roll">
+                    <div id="uk-address" class="phone-div">Hounslow, London
+                        <div id="ro-address" class="phone-div">Timisoara, Timis</div>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+            
         </div>
         <div id="side-titles">
             <div id="side-cv" class="side-tab"><h2>Resume</h2></div>

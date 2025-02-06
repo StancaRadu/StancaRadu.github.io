@@ -6,6 +6,10 @@
     --red-light: hsl(0, 55%, 40%);
     --base-dark: hsl(250, 18%, 17%);
     --base-light: hsl(200, 50%, 90%);
+
+    font-family: "Liter", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 html{
@@ -67,10 +71,11 @@ body{
             'c1 c2'
             'slider slider'
             'phone phone'
-            'address address';
-        grid-template-rows: repeat(5, auto) 1fr;
+            'address address'
+            '. .';
+        grid-template-rows: repeat(6, auto) minmax(48px, 1fr);
         grid-template-columns: 1fr 1fr;
-        column-gap: 2px;
+        column-gap: 4px;
 
         #name-details{
             margin-bottom: 12px;
@@ -99,10 +104,11 @@ body{
 
             cursor: pointer;
 
-            & #country1{
+            &#country1{
                 grid-area: c1;
+
             }
-            & #country2{
+            &#country2{
                 grid-area: c2;
             }
         }
@@ -110,9 +116,9 @@ body{
         #slider{
             grid-area: slider;
             
-            height: 2px;
+            height: 4px;
             width: 100%;
-            margin: 2px 0;
+            margin: 2px 0 24px;
             padding-left: 17.5%;
 
             transition: all .5s;
@@ -131,11 +137,58 @@ body{
             }
 
         }
-        #phone-details{
+        #phone-details, #address-details{
             grid-area: phone;
+
+            display: grid;
+            grid-template-columns: 15% 1fr 15%;
+            justify-content: center;
+            align-items: center;
+
+            #phone-label, #address-label{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{ width: 24px; }
+
+            }
+            #phone-roll, #address-roll{
+                width: 100%;
+                height: 100%;
+                border: 2px solid var(--border-light);
+                border-width: 0 2px;
+
+                position: relative;
+                overflow: hidden;
+
+                #uk-phone, #uk-address{
+                    position: absolute;
+                    width: 100%;
+
+                    transition: all .5s;
+
+
+                    #ro-phone, #ro-address{
+                        position: absolute;
+                        height: 100%;
+                        right: 100%;
+                        top: 0;
+                    }
+                }
+                .phone-div{
+                    width: 100%;
+                    padding: 2px;
+
+                    text-align: center;
+                }
+            }
         }
         #address-details{
             grid-area: address;
+            margin: 4px 0 0;
+        }
+        #phone-details{
+            margin: 0 0 4px;
         }
     }
 
