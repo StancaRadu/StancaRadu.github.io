@@ -36,8 +36,9 @@ tabs.forEach(tab => {
 
 document.getElementById('country1').onclick = function(e){
     slider = document.getElementById('slider').style
-    slider.setProperty('--before-width', '5%');
-    document.getElementById('slider').style.paddingLeft = '17.5%'
+    if (slider.paddingLeft == '17.5%') return
+    slider.setProperty('--before-width', '35%');
+    slider.paddingLeft = '17.5%'
 
     setTimeout(()=>{
         slider.setProperty('--before-width', '15%');
@@ -47,8 +48,9 @@ document.getElementById('country1').onclick = function(e){
 }
 document.getElementById('country2').onclick = function(e){
     slider = document.getElementById('slider').style
-    slider.setProperty('--before-width', '15%');
-    document.getElementById('slider').style.paddingLeft = '62.5%'
+    if (slider.paddingLeft == '62.5%') return
+    slider.setProperty('--before-width', '5%');
+    slider.paddingLeft = '62.5%'
 
     setTimeout(()=>{
         slider.setProperty('--before-width', '25%');
