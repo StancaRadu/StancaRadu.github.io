@@ -19,13 +19,13 @@ function changeTab(tab, title = false) {
                         changer.transitionDuration = '0s'
                         changer.left = '-200%'
                         setTimeout(()=>{
-                            changer.transitionDuration = '.5s'
+                            changer.transitionDuration = '.3s'
                             clicked = false
-                        }, 10)
-                    }, 500)
-                }, 500)
-            }, 500)
-        }, 500)
+                        }, 50)
+                    }, 300)
+                }, 300)
+            }, 300)
+        }, 300)
 }
 
 tabs.forEach(tab => {
