@@ -2,6 +2,8 @@
 
 :root{
     --border-light: hsl(215, 30%, 45%);
+    --contrast-light: hsl(35, 55%, 40%);
+    --red-light: hsl(0, 55%, 40%);
     --base-dark: hsl(250, 18%, 17%);
     --base-light: hsl(200, 50%, 90%);
 }
@@ -232,16 +234,39 @@ body{
         #close-button{
             box-sizing: border-box;
             aspect-ratio: 1;
-            width: 2rem;
-            border: 2px solid hsl(1, 100%, 50%);
+            height: 50%;
+            border: 2px solid var(--contrast-light);
 
             background-color: hsl(217, 30%, 18%);
+            transition: all .5s;
 
             position: absolute;
-            right: .5rem;
-            top: .5rem;
+            right: 10px;
+            top: 25%;
 
             z-index: 2;
+            overflow: hidden;
+
+            &:hover{
+                border-color: var(--red-light);
+                #rl-line, #lr-line{ background-color: var(--red-light); }
+            }
+
+            #rl-line, #lr-line{
+                height: 50%;
+                width: 2px;
+
+                position: absolute;
+                top: 25%;
+                left: calc(50% - 1px);
+    
+                background-color: var(--contrast-light);
+
+                transition: all .5s;
+            }
+
+            #rl-line{ transform: rotateZ(45deg); }
+            #lr-line{ transform: rotateZ(-45deg); }
         }
 
         #title-changer{
@@ -291,8 +316,7 @@ body{
 }
 
 #content{
-    height: 400%;
-    width: 400%;
+    height: 120%;
 }
 
 /* GENERAL ELEMENTS */
