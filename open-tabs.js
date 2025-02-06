@@ -6,19 +6,25 @@ tabs.forEach(tab => {
         clicked = true
         new_title = this.getElementsByTagName('h2')[0].innerHTML
         changer = document.getElementById('title-changer').style
-        changer.left = 0
+        changer.left = '-100%'
         setTimeout(()=>{
-            document.getElementById('title').innerHTML = new_title
-            changer.left = '200%'
+            changer.left = '0%'
             setTimeout(()=>{
-                changer.transitionDuration = '0s'
-                changer.left = '-200%'
+                document.getElementById('title').innerHTML = new_title
+                changer.left = '100%'
                 setTimeout(()=>{
-                    changer.transitionDuration = '1s'
-                    clicked = false
-                }, 10)
-            }, 1000)
-        }, 1000)
+                    changer.left = '200%'
+                    setTimeout(()=>{
+                        changer.transitionDuration = '0s'
+                        changer.left = '-200%'
+                        setTimeout(()=>{
+                            changer.transitionDuration = '.5s'
+                            clicked = false
+                        }, 10)
+                    }, 500)
+                }, 500)
+            }, 500)
+        }, 500)
     }
 });
 
