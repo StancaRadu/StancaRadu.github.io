@@ -415,6 +415,9 @@ body{
     position: absolute;
 }
 #content-resume{
+    &::after{
+
+    }
 
     #resume-header{
         box-sizing: border-box;
@@ -457,6 +460,14 @@ body{
             cursor: pointer;
         }
     }
+    #fade-div{
+        width: 100%;
+        height: 75px;
+        position: sticky;
+        top: 0;
+
+        background-image: linear-gradient( var(--main-dark) 15%, transparent);
+    }
     #resume{
         width: 100%;
         height: 4000px;
@@ -475,24 +486,24 @@ body{
             gap: 2px;
 
             
-            div{
+            .resume-content, .resume-heading{
                 box-sizing: border-box;
                 padding: 12px;
                 background-color: var(--main-dark);
 
-                &.resume-heading{
-                    text-align: right;
-                    h2{
-                        position: sticky;
-                        top: calc(8rem + 24px);
-                    }
+            }
+            .resume-heading{
+                text-align: right;
+                h2{
+                    position: sticky;
+                    top: 20px;
                 }
+            }
 
-                &.resume-content{
-                    .resume-text-area{
-                        width: 100%;
-                        height: 100%;
-                    }
+            .resume-content{
+                .resume-text-area{
+                    width: 100%;
+                    height: 100%;
                 }
             }
         }
