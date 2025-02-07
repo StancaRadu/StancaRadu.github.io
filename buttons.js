@@ -70,3 +70,10 @@ document.getElementById('country2').onclick = function(e){
 document.getElementById('close-button').onclick = function(e){
     changeTab(false, title = 'Welcome!')
 }
+
+document.getElementById('hide-photo').onclick = function(e){
+    photo = document.getElementById('side-photo').style
+    photo.height = 0
+    photo.padding = 0
+    photo.border = 'none'
+}
