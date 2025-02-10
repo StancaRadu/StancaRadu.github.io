@@ -50,23 +50,23 @@
             
         </div>
         <div id="side-titles">
-            <div id="side-cv" class="side-tab"><h2>Resume</h2></div>
-            <div id="side-projects" class="side-tab"><h2>Projects</h2></div>
-            <div id="side-description" class="side-tab"><h2>About me</h2></div>
-            <div id="side-contact" class="side-tab"><h2>Contact</h2></div>
+            <div id="side-cv" class="side-tab" name="content-resume"><h2>Resume</h2></div>
+            <div id="side-projects" class="side-tab" name="content-projects"><h2>Projects</h2></div>
+            <div id="side-description" class="side-tab" name="content-me"><h2>About me</h2></div>
+            <div id="side-contact" class="side-tab" name="content-contact"><h2>Contact</h2></div>
         </div>
     </div>
     <div id="display">
+    <div id="splash-screen"><object id="loading-icon" data="icons/refresh.svg" type="image/svg+xml"></object></div>
 
 <!-- TITLE BAR -->
         <div id="title-bar"><h1 id="title">Welcome!</h1>
             <div id="title-changer"></div>
-            <div id="close-button"><div id="lr-line"></div><div id="rl-line"></div></div>
+            <div id="close-button" name="content-welcome"><div id="lr-line"></div><div id="rl-line"></div></div>
         </div>
         <div id="content-area">
-
 <!-- RESUME PAGE -->
-            <div id="content-resume" class="content-div">
+            <div id="content-resume" class="content-div hidden">
                 <div id="fade-div">
                     <div id="download-cv-button">
                         <img src="icons/download.png" alt="download">
@@ -77,6 +77,58 @@
                     </div>
                 </div>
                 <div id="resume">
+                    <!-- STUDIES -->
+                    <article id="studies-section">
+                        <div class="resume-heading">
+                            <h2>Studies</h2>
+                        </div>
+                        <div class="resume-content">
+                            <div class="resume-text-area">
+                                <p>--September 2021 - July 2024</p>
+                                <h3>BSCs(Hons) Computer Science:<br><span style="padding-left: 4ch;">Computer Science and Engineering</span></h3>
+                                <div style="padding-left: 8ch;"><p>University of Westminster (London)</p></div>
+                                <div style="padding: 1lh 0 0 12ch;">First year:</div>
+                                <div style="padding-left: 14ch;">
+                                    <ul>
+                                        <li>Sofware Development (Python)</li>
+                                        <li>Mathematics for Computing</li>
+                                        <li>Computer Systems Fundementals</li>
+                                        <li>Trends in Computer Science</li>
+                                        <li>Sofware Development (Java)</li>
+                                        <li>Web Design and Development</li>
+                                    </ul>
+                                </div>
+                                <div style="padding: 1lh 0 0 12ch;">Second year:</div>
+                                <div style="padding-left: 14ch;">
+                                    <ul>
+                                        <li>Object Oriented Programming</li>
+                                        <li>Database Systems</li>
+                                        <li>Robotic Principles</li>
+                                        <li>Software Development Group Project</li>
+                                        <li>Client-Server Architectures</li>
+                                        <li>Server-Side Web Development</li>
+                                    </ul>
+                                </div>
+                                <div style="padding: 1lh 0 0 12ch;">Third year:</div>
+                                <div style="padding-left: 14ch;">
+                                    <ul>
+                                        <li>Applied AI</li>
+                                        <li>Usability Testing and Evaluation</li>
+                                        <li>Advanced Server-Side Web Programming</li>
+                                        <li>Cyber Security</li>
+                                        <li>Final Year Project</li>
+                                    </ul>
+                                </div>
+                                <p style="padding-top: 2lh;">--September 2019 - July 2021</p>
+                                <h3>BTEC L3 Extended Diploma in Computing</h3>
+                                <div style="padding-left: 8ch;"><p>West Thames College (London)</p></div>
+                                <p style="padding-top: 2lh;">--September 2018 - July 2019</p>
+                                <h3>BTEC L3 Extended Diploma in Information and Creative Technology</h3>
+                                <div style="padding: 0 0 1lh 8ch;"><p>West Thames College (London)</p></div>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- SKILLS -->
                     <article id="skills-section">
                         <div class="resume-heading">
                             <h2>Skills</h2>
@@ -86,17 +138,8 @@
                             </div>
                         </div>
                     </article>
-                    <article>
-                        <div class="resume-heading">
-                            <h2>Studies</h2>
-                        </div>
-                        <div class="resume-content">
-                            <div class="resume-text-area">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dignissimos eaque deleniti iste autem perspiciatis fugiat nisi dolorum voluptate quis at aliquam temporibus delectus, voluptatibus odit quia a cupiditate laboriosam.
-                            </div>
-                        </div>
-                    </article>
-                    <article>
+                    <!-- EXPERIENCE -->
+                    <article id="experience-section">
                         <div class="resume-heading">
                             <h2>Experience</h2>
                         </div>
@@ -106,7 +149,8 @@
                             </div>
                         </div>
                     </article>
-                    <article>
+                    <!-- GOALS -->
+                    <article id="goals-section">
                         <div class="resume-heading">
                             <h2>Goals</h2>
                         </div>
@@ -118,9 +162,15 @@
                     </article>
                 </div>
             </div>
-
+            <div id="content-projects" class="content-div hidden"></div>
+            <div id="content-me" class="content-div hidden"></div>
+            <div id="content-contact" class="content-div hidden"></div>
 <!-- WELCOME PAGE -->
-            <div id="content-welcome" class="content-div"></div>
+            <div id="content-welcome" class="content-div">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus deserunt corrupti dolore itaque id neque reiciendis assumenda nobis earum! Veniam quisquam commodi vel laudantium. Explicabo perferendis tenetur possimus accusantium officiis.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ipsa, eligendi odio soluta vitae temporibus dolores aperiam! Voluptatibus, nemo perferendis? Animi neque deleniti ex voluptatibus esse obcaecati voluptatem perferendis eveniet!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, laboriosam beatae eos reiciendis ipsa nobis, repudiandae deserunt officiis architecto aliquam, accusamus mollitia eligendi consectetur id quas optio dolores. Perspiciatis, deserunt?
+            </div>
 
         </div>
     </div>
