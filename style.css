@@ -16,9 +16,8 @@
 
 html{
     box-sizing: border-box;
-    height: 100%;
     min-height: fit-content;
-    min-width: fit-content;
+    height: 100%;
     padding: 24px;
 
     background-color: var(--base-dark);
@@ -27,7 +26,8 @@ html{
 body{
     box-sizing: border-box;
     min-height: 100%;
-    min-width: fit-content;
+    width: fit-content;
+    min-width: 100%;
     border-radius: 6px;
     padding: 12px;
 
@@ -35,10 +35,20 @@ body{
     background-color: var(--base-light);
 
     display: grid;
-    grid-template-columns: 360px 1fr;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 'side-menu display';
     grid-template-rows: 1fr;
     gap: 18px;
+
+    position: relative;
 }
+
+@media screen and (max-width: 1200px) {
+    #side-menu{
+        position: absolute;
+        left: -360px;
+    }
+  }
 
 #side-menu, #display{
     box-shadow: 0 0 8px 6px hsla(230, 70%, 13%, 70%);
@@ -48,13 +58,16 @@ body{
 }
 
 #side-menu{
+    grid-area: side-menu;
+    box-sizing: border-box;
+    width: 360px;
+    min-height: 100%;
     padding: 4px;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
 
     display: grid;
     grid-template-rows: auto 1fr auto;
-
 
     #side-photo{
         display: flex;
@@ -327,8 +340,11 @@ body{
 }
 
 #display{
+    grid-area: display;
+
     box-sizing: border-box;
-    min-width: 450px;
+    min-width: 100%;
+    width: fit-content;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
 
@@ -570,6 +586,61 @@ body{
             }
         }
 
+    }
+}
+#content-projects{
+    min-width: 1000px;
+    .project-div{
+        width: 250px;
+        height: 350px;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+
+        background-color: red;
+
+        transition: all .5s, aspect-ratio 0s;
+        perspective: 1000px;
+
+        &:hover .project-flip{
+            transform: rotateY(180deg);
+        }
+
+
+        .project-flip{
+            height: 100%;
+            width: 100%;
+
+            display: flex;
+
+            position: relative;
+            
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+
+            cursor: pointer;
+
+            .project-front, .project-back{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+            .project-front{
+                height: 100%;
+                width: 100%;
+                background-color: blueviolet;
+            }
+            .project-back{
+                height: 100%;
+                width: 100%;
+                background-color: aqua;
+                transform: rotateY(180deg);
+            }
+        }
     }
 }
 
